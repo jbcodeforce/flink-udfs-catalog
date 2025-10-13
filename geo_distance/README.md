@@ -12,6 +12,50 @@ The `GeoDistanceFunction` is a scalar function that takes four parameters:
 
 It returns the distance between the two points on earth in kilometers.
 
+## Deployment
+
+### Confluent Cloud for Flink
+
+* Get FlinkDeveloper RBAC to be able to manage workspaces and artifacts
+* Use the Confluent CLI to upload the jar file. Example
+    ```sh
+    confluent environment list
+    # then in your environment
+    confluent flink artifact create geo_distance --artifact-file target/geo-distance-udf-1.0-0.jar --cloud aws --region us-west-2 --environment env-nk...
+    ```
+
+    ```sh
+    +--------------------+--------------+
+    | ID                 | cfa-nx6wjz   |
+    | Name               | geo_distance |
+    | Version            | ver-nxnnnd   |
+    | Cloud              | aws          |
+    | Region             | us-west-2    |
+    | Environment        | env-nknqp3   |
+    | Content Format     | JAR          |
+    | Description        |              |
+    | Documentation Link |              |
+    +--------------------+--------------+
+    ```
+
+    Also visible in the Artifacts menu
+    ![](./images/udf_artifacts.png)
+
+* UDFs are registered inside a Flink database
+    ```sql
+    CREATE FUNCTION GEO_DISTANCE
+    AS
+    'io.confluent.udf.GeoDistanceFunction'
+    USING JAR 'confluent-artifact://cfa-...';
+    ```
+* Use the function to compute distance between Paris and London:
+    ![](./images/udf_in_sql.png)
+
+
+### Confluent Platform Manager for Flink
+
+### Apache Flink
+
 ## Usage
 
 ### Java Table API
@@ -36,24 +80,13 @@ Table result = tEnv.from("MyTable")
 
 ### SQL
 
-* On Confluent Cloud, need to have FlinkDeveloper role to be able to create artifact, then with the cli do:
-  ```sh
-   confluent flink artifact create geo_distance --artifact-file target/geo-distance-udf-1.0-0.jar --cloud aws --region us-west-2 --environment env-nk...
-   ```
 
 * Define the Function using reference to the artifact created
 ```sql
--- Register the function
-CREATE FUNCTION GEO_DISTANCE 
-  AS 'io.confluent.udf.GeoDistanceFunction'
-  USING JAR 'confluent-artifact://cfa-...';
-
 -- Use in SQL query
 SELECT GEO_DISTANCE(lat1, lon1, lat2, lon2) AS distance_km;
 FROM MyTable;
 ```
-
-* On Confluent Platform -> TBD
 
 ## Building
 
