@@ -80,7 +80,6 @@ Table result = tEnv.from("MyTable")
 
 ### SQL
 
-
 * Define the Function using reference to the artifact created
 ```sql
 -- Use in SQL query
