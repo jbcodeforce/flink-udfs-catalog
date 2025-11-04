@@ -9,7 +9,18 @@ This repository will group of User Defined Functions for Flink. Some functions a
 | SEQUENCE | generates a sequence of numbers, used in Flink SQL to generate rows with sequential numbers | [sequence](./sequence/) |
 
 
-## UDFs Candidates
+## Documentation References
+
+* [Apache Flink UDF chapter](https://nightlies.apache.org/flink/flink-docs-master/docs/dev/table/functions/udfs/)
+* [Confluent Cloud UDF documentation](https://docs.confluent.io/cloud/current/flink/how-to-guides/create-udf.html)
+
+## Apache Flink Packaging
+
+* If the UDF is specific to a particular Flink job, you can include the UDF JAR within the main job JAR when submitting it.
+* For UDFs intended for broader use or across multiple jobs, you can add the UDF JAR to the Flink cluster's classpath by placing it in the lib directory of each Flink TaskManager and JobManager. 
+* If using Flink SQL, you can register the UDF in a catalog
+
+## Future UDFs Candidates
 
 * Async call to a DB for lookup - which may not be a good idea for Confluent Cloud.
 * Compute Max of values included in a JSON object -> need to specify in detail
