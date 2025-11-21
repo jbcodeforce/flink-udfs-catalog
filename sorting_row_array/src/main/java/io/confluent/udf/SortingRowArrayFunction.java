@@ -31,7 +31,7 @@ public class SortingRowArrayFunction extends ScalarFunction {
      * @param columnIndex The zero-based index of the column to sort by
      * @return A sorted array of Row objects, or null if input is invalid
      */
-    public @DataTypeHint("ARRAY<ROW>") Row[] eval(@DataTypeHint("ARRAY<ROW>") Row[] rows, Integer columnIndex) {
+    public @DataTypeHint("ARRAY<ROW <item_id INT, item_name STRING, item_description STRING, item_display_order INT>>") Row[] eval(@DataTypeHint("ARRAY<ROW <item_id INT, item_name STRING, item_description STRING, item_display_order INT>>") Row[] rows, Integer columnIndex) {
         // Validate inputs
         if (rows == null || columnIndex == null) {
             logger.warn("Null input provided: rows={}, columnIndex={}", rows, columnIndex);

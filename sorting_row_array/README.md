@@ -104,15 +104,6 @@ USING JAR 'confluent-artifact://cfa-xxxxx';
 - Validates input parameters and column indices
 - Comprehensive error handling and logging
 
-## Implementation Details
-
-The UDF:
-- Uses Java's Stream API for efficient sorting
-- Implements null-safe comparators (nulls last)
-- Validates column indices against row arity
-- Returns null for invalid inputs
-- Logs errors for troubleshooting
-
 ## Testing
 
 The implementation includes 16 comprehensive unit tests covering:
@@ -131,29 +122,3 @@ Run the tests using:
 mvn test
 ```
 
-## Requirements
-
-- Java 17 or later
-- Apache Flink 1.20.1 or later
-- Maven 3.x
-
-## Technical Notes
-
-### Type Hints
-
-The function uses `@DataTypeHint("ARRAY<RAW>")` for both input and output to handle dynamic Row schemas. This approach may have limitations on some platforms.
-
-### Performance
-
-- Time complexity: O(n log n) where n is the array size
-- Space complexity: O(n) for the sorted array
-- Suitable for arrays up to thousands of elements
-
-### Error Handling
-
-The function returns `null` in these cases:
-- Null input array
-- Null column index
-- Column index out of bounds
-- Non-comparable column type
-- Any unexpected errors (logged)
