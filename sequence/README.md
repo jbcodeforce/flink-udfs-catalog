@@ -61,6 +61,8 @@ mvn test
 
 ## Deploying to Confluent Cloud
 
+[See product documentation.](https://docs.confluent.io/cloud/current/flink/concepts/user-defined-functions.html)
+
 * Use the Confluent CLI to upload the jar file. Example
     ```sh
     confluent environment list

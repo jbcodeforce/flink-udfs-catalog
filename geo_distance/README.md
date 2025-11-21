@@ -16,6 +16,8 @@ It returns the distance between the two points on earth in kilometers.
 
 ### Confluent Cloud for Flink
 
+[See product documentation.](https://docs.confluent.io/cloud/current/flink/concepts/user-defined-functions.html)
+
 * Get FlinkDeveloper RBAC to be able to manage workspaces and artifacts
 * Use the Confluent CLI to upload the jar file. Example
     ```sh

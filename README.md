@@ -7,6 +7,7 @@ This repository will group of User Defined Functions for Flink. Some functions a
 | GEO_DISTANCE | Compute the distance using the Haversine function between two geo positions on earth | [geo_distance](./geo_distance/) |
 | WITHIN_AREA | Assess if a geo location is within an area. Areas are defined in a table as reference data. | [within_area](./within_area/) |
 | SEQUENCE | generates a sequence of numbers, used in Flink SQL to generate rows with sequential numbers | [sequence](./sequence/) |
+| SORT_ROW_ARRAY_ON_ID | returns a sorted array of ROWs based on the column referenced by the given id | [sorting_row_array](./sorting_row_array/) |
 
 
 ## Documentation References
