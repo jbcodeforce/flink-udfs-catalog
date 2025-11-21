@@ -10,26 +10,37 @@ The `SortingRowArrayFunction` is a scalar function that takes:
 
 It returns a new array with the same ROW objects sorted by the values in the specified column.
 
+## Implementation approach
+
+The SortingRowArrayFunction class extends  the flink `ScalarFunction`. And implement the eval method with list of Row.
+
+When deploying on Confluent Cloud, we need to specify the Data mapping so the method signature includes flink DataTypeHint. 
+
+```java
+public @DataTypeHint("ARRAY<ROW <item_id INT, item_name STRING, item_description STRING, item_display_order INT>>") Row[] eval(@DataTypeHint("ARRAY<ROW <item_id INT, item_name STRING, item_description STRING, item_display_order INT>>") Row[] rows, Integer columnIndex) {
+   
+```
+
+Those type hints may be adapted for other use cases.
+
 ## Usage
 
 ### SQL Example
 
+See code in [cc-flink](./cc-flink/test_sorting_row_array.sql).
+
 ```sql
--- Example: Sort items by display order (column index 3)
-WITH assets_data (asset_id, item_id, item_name, item_description, item_display_order) AS (
-    VALUES
-        (10, 1, 'item1', 'description1', 2),
-        (10, 2, 'item2', 'description2', 1),
-        (10, 3, 'item3', 'description3', 5),
-        (10, 4, 'item4', 'description4', 3),
-        (10, 5, 'item5', 'description5', 4)
+with assets_data (asset_id, item_id, item_name, item_description, item_display_order) as (
+    values
+        (10, 1,'item1', 'description1', 2 ),
+        (20, 2,'item2', 'description2', 1),
+        (10, 3,'item3', 'description3', 5),
+        (10, 4,'item4', 'description4', 3),
+        (20, 5,'item5', 'description5', 4)
 )
 SELECT
   asset_id,
-  SORT_ROW_ARRAY_ON_ID(
-    ARRAY_AGG(ROW(item_id, item_name, item_description, item_display_order)),
-    3  -- Sort by the 4th column (index 3) - display_order
-  ) AS sorted_items
+  SORT_ROW_ARRAY_ON_ID(ARRAY_AGG(ROW(item_id, item_name, item_description, item_display_order)),3) AS items
 FROM assets_data
 GROUP BY asset_id;
 ```
@@ -48,33 +59,19 @@ The JAR file will be created in the `target` directory: `sorting-row-array-udf-1
 
 [See product documentation.](https://docs.confluent.io/cloud/current/flink/concepts/user-defined-functions.html)
 
-### Known Limitations
 
-⚠️ **Important**: This UDF currently has type inference limitations on Confluent Cloud. The error "error extracting metadata: Error in extracting a signature to output mapping" may occur because:
+### Using the Confluent Console / Artifacts
 
-1. Confluent Cloud does not support custom type inference
-2. Row arrays with dynamic schemas are complex types that require explicit type hints
-3. The current implementation uses `@DataTypeHint("ARRAY<RAW>")` which may not be fully supported
+* From artifacts main page, add artifact
 
-### Alternative Approaches
+    ![](./images/artifact_page.png)
 
-* Using the Confluent Console / Artifacts
-    * From artifacts main page, add artifact
-        ![](./images/artifact_page.png)
-    * Upload the `sorting-row-array-udf-1.0-0.jar` by specifying the Cloud provider and region:
-        ![](./images/upload_jar.png) 
+* Upload the `sorting-row-array-udf-1.0-0.jar` by specifying the Cloud provider and region:
 
-1. **Specific Schema Version**: Create a version with a hardcoded schema:
-   ```java
-   @FunctionHint(
-       input = {@DataTypeHint("ARRAY<ROW<id INT, name STRING, desc STRING, order INT>>"), @DataTypeHint("INT")},
-       output = @DataTypeHint("ARRAY<ROW<id INT, name STRING, desc STRING, order INT>>")
-   )
-   ```
+    ![](./images/upload_jar.png) 
 
-2. **Use on Self-Managed Flink**: Deploy to Apache Flink or Confluent Platform where custom type inference is supported.
 
-### Deployment Steps (if supported)
+### Using Confluent CLI
 
 ```sh
 # List your environments
@@ -88,7 +85,7 @@ confluent flink artifact create sorting_row_array \
   --environment env-xxxxx
 ```
 
-Register the function in Flink SQL:
+### Register the function in Flink SQL within a Catalog:
 
 ```sql
 CREATE FUNCTION SORT_ROW_ARRAY_ON_ID
