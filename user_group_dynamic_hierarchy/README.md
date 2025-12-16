@@ -111,7 +111,7 @@ The JAR file will be created in the `target` directory.
     confluent flink artifact create sequence --artifact-file target/dynamic-group-hierarchy-udf-1.0-0.jar --cloud aws --region us-west-2 --environment env-nk...
     ```
 
-* Declare the function in the Catalog
+* For SQL queries, the UDF must be registered by using the CREATE FUNCTION statement.
     ```sql
     CREATE FUNCTION USERS_IN_GROUPS
     AS

@@ -25,7 +25,7 @@ import java.util.ArrayDeque;
  * Input: Takes the hierarchy as a nested ARRAY of ROWs and a starting node name
  * Output: Emits each person found under that node (at any depth)
  */
-@FunctionHint(output = @DataTypeHint("ROW<group_name STRING, ARRAY<users STRING>>"))
+@FunctionHint(output = @DataTypeHint("ROW<group_name STRING, users ARRAY<STRING>>"))
 public class HierarchyTraversal extends TableFunction {
     private static final Logger logger = LogManager.getLogger(HierarchyTraversal.class);
 
