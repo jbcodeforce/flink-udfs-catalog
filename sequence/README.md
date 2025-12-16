@@ -10,12 +10,18 @@ The SEQUENCE function generates a sequence of numbers between a start and end va
 
 ```sql
 -- Generate a sequence from 1 to 50
-SELECT id 
-FROM UNNEST(SEQUENCE(1, 50)) AS t(id);
+SELECT 
+ a.*,
+ t.id 
+from table_a a
+cross join lateral table(SEQUENCE(1, 50)) AS t(id);
 
 -- Generate a descending sequence
-SELECT id 
-FROM UNNEST(SEQUENCE(10, 1)) AS t(id);
+SELECT 
+ a.*,
+ t.id 
+from table_a a
+cross join lateral table(SEQUENCE(10, 1)) AS t(id);
 ```
 
 ## Building the UDF

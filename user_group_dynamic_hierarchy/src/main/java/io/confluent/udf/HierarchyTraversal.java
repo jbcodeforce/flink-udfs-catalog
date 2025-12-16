@@ -25,78 +25,77 @@ import java.util.ArrayDeque;
  * Input: Takes the hierarchy as a nested ARRAY of ROWs and a starting node name
  * Output: Emits each person found under that node (at any depth)
  */
-@FunctionHint(output = @DataTypeHint("ROW<person_name STRING, depth INT, path STRING>"))
+@FunctionHint(output = @DataTypeHint("ROW<group_name STRING, ARRAY<users STRING>>"))
 public class HierarchyTraversal extends TableFunction {
     private static final Logger logger = LogManager.getLogger(HierarchyTraversal.class);
 
     /**
      * Traverse hierarchy starting from a given node
      * 
-     * @param hierarchyData ARRAY of ROW<department_name STRING, item_name STRING,
+     * @param hierarchyData ARRAY of ROW<group_name STRING, item_name STRING,
      *                      item_type STRING>
-     * @param startNode     The department or group name to start traversal from
-     * @param maxDepth      Maximum depth to traverse (safety limit)
+     * @param startNode     The group name to start traversal from
      */
     public void eval(
-            @DataTypeHint("ARRAY<ROW<department_name STRING, item_name STRING, item_type STRING>>") Row[] hierarchyData,
-            String startNode,
-            Integer maxDepth) {
+            @DataTypeHint("ARRAY<ROW<group_name STRING, item_name STRING, item_type STRING>>") Row[] hierarchyData,
+            String startNode) {
         if (hierarchyData == null || startNode == null) {
             return;
         }
 
         // Build adjacency map: parent -> list of children with their types
-        Map<String, List<HierarchyItem>> childrenMap = new HashMap<>();
+        Map<String, List<HierarchyItem>> subGroupsMap = new HashMap<>();
+        Map<String, List<HierarchyItem>> membersMap = new HashMap<>();
+        Set<String> allGroups = new HashSet<>();
 
         for (Row row : hierarchyData) {
-            String departmentName = (String) row.getField(0);
+            String group_name = (String) row.getField(0);
             String itemName = (String) row.getField(1);
             String itemType = (String) row.getField(2);
 
-            if (departmentName != null && itemName != null) {
-                childrenMap
-                        .computeIfAbsent(departmentName, k -> new ArrayList<>())
+            if (group_name != null) {
+                allGroups.add(group_name);
+            }
+            if (group_name != null && (itemName != null && ! itemName.equals("NULL"))) {
+                if (itemType.equals("GROUP")) {
+                     /* parent_group, sub_group, GROUP -> then subgroup is a group*/ 
+                    allGroups.add(itemName);
+                    subGroupsMap.computeIfAbsent(group_name, k -> new ArrayList<>())
                         .add(new HierarchyItem(itemName, itemType));
-            }
-        }
-
-        // Recursive traversal using a stack (to avoid stack overflow)
-        Deque<TraversalState> stack = new ArrayDeque<>();
-        stack.push(new TraversalState(startNode, 0, startNode));
-
-        Set<String> visited = new HashSet<>(); // Prevent cycles
-
-        while (!stack.isEmpty()) {
-            TraversalState current = stack.pop();
-
-            if (current.depth > maxDepth || visited.contains(current.nodeName)) {
-                continue;
-            }
-            visited.add(current.nodeName);
-
-            List<HierarchyItem> children = childrenMap.get(current.nodeName);
-            if (children == null) {
-                continue;
-            }
-
-            for (HierarchyItem child : children) {
-                String newPath = current.path + " -> " + child.name;
-
-                if ("PERSON".equals(child.type)) {
-                    // Emit person found
-                    collect(Row.of(child.name, current.depth + 1, newPath));
-                } else if ("GROUP".equals(child.type)) {
-                    // Continue traversal into subgroup
-                    stack.push(new TraversalState(child.name, current.depth + 1, newPath));
+                } else if (itemType.equals("PERSON")) {
+                    membersMap.computeIfAbsent(group_name, k -> new ArrayList<>())
+                        .add(new HierarchyItem(itemName, itemType));
                 }
             }
         }
+       
+        for (String groupName : allGroups) {
+            List<String> users= findUsers(groupName, membersMap, subGroupsMap);
+            collect(Row.of(groupName, users));
+        }
     }
 
-    // Overload with default max depth
-    public void eval(Row[] hierarchyData, String startNode) {
-        eval(hierarchyData, startNode, 10); // Default max depth of 10
+    private List<String> findUsers(String groupName, Map<String, List<HierarchyItem>> membersMap, Map<String, List<HierarchyItem>> subGroupsMap) {
+        /**
+         * Find all users in a group and its children
+         * @param groupName
+         * @param allGroups
+         * @param membersMap <group_name, List<HierarchyItem>> the persons of the group
+         * @param childrenMap <group_name, List<HierarchyItem>> the subgroups of the group 
+         * @return
+         */
+        Set<String> users = new HashSet<String>();
+        if (subGroupsMap.containsKey(groupName)) {
+            for (HierarchyItem item : subGroupsMap.get(groupName)) {
+                users.addAll(findUsers(item.name, membersMap, subGroupsMap));
+            }
+        }
+        if (membersMap.containsKey(groupName)) {
+            users.addAll(membersMap.get(groupName).stream().map(item -> item.name).toList());
+        }
+        return users.stream().toList();
     }
+
 
     private static class HierarchyItem {
         final String name;
@@ -108,24 +107,12 @@ public class HierarchyTraversal extends TableFunction {
         }
     }
 
-    private static class TraversalState {
-        final String nodeName;
-        final int depth;
-        final String path;
-
-        TraversalState(String nodeName, int depth, String path) {
-            this.nodeName = nodeName;
-            this.depth = depth;
-            this.path = path;
-        }
-    }
-
     /**
      * Returns a string describing the function.
      */
         @Override
         public String toString() {
-            return "DYNAMIC_GROUP_HIERARCHY_TRAVERSAL";
+            return "USERS_IN_GROUPS";
         }
 
 }
