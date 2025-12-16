@@ -1,6 +1,6 @@
 # Traverse User Group Hierarchy UDF for Flink
 
-The problem to addres is how to support a hierarchy within the same table, and try to get the users in a group by flattening the hierarchy. As an example there is a group of hospital, with department, and group of people, then persons.
+The problem to address, how to support a hierarchy within the same table, and try to get the users in a group by flattening the hierarchy. As an example there is a group of hospitals, with departments, and groups of people, then persons.
 
 ![](./images/group_hierarchy.drawio.png)
 
@@ -37,7 +37,7 @@ insert into group_hierarchy (id, group_name, item_name, item_type, created_at) v
 (13, 'nurses_gp_2', 'Lucy', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:40')),
 (14, 'nurses_gp_2', 'Mary', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:40')),
 (15, 'department_11', 'Paul', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:50')),
-(16, 'department_11', 'Julie', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:50')),;
+(16, 'department_11', 'Julie', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:50'));
 ```
 
 * If we extract the following array from the group_hierarchy:
@@ -59,8 +59,9 @@ nurses_gp_2,Mary,PERSON,
 department_11,Paul,PERSON,
 department_11,Julie,PERSON
 
-The function needs to accumulate 
-* The expected results look like:
+The function needs to accumulate person to groups, and flatten the hierarchy. So if a person is in child group, he/she will be in parent of this group.
+
+* The expected results from the previous inserts will look like:
 
 | Group | Persons |
 | --- | --- |
@@ -111,9 +112,9 @@ The JAR file will be created in the `target` directory.
     ```
 
 * Declare the function in the Catalog
-```sql
-CREATE FUNCTION USERS_IN_GROUPS
-AS
-'io.confluent.udf.HierarchyTraversal'
-USING JAR 'confluent-artifact://cfa-qj...';
-```
+    ```sql
+    CREATE FUNCTION USERS_IN_GROUPS
+    AS
+    'io.confluent.udf.HierarchyTraversal'
+    USING JAR 'confluent-artifact://cfa-qj...';
+    ```
