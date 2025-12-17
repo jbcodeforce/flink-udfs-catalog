@@ -4,7 +4,7 @@ This project implements a User Defined Function (UDF) for Apache Flink that gene
 
 ## Usage
 
-The SEQUENCE function generates a sequence of numbers between a start and end value (inclusive). It can be used in combination with UNNEST to generate rows in Flink SQL.
+The SEQUENCE function generates a sequence of numbers between a start and end value (inclusive). It can be used in combination with LATERAL TABLE to generate rows in Flink SQL.
 
 ### Example Usage
 

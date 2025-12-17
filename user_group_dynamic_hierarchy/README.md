@@ -83,10 +83,9 @@ WITH hierarchy_array AS (
     FROM group_hierarchy
 )
 SELECT 
-    node_name,
-    USERS_IN_GROUPS(h.hierarchy_data, node_name) AS persons
-FROM hierarchy_array h
-CROSS JOIN (VALUES ('Region-1')) AS nodes(node_name);
+    t.node_name,
+    t.persons
+FROM hierarchy_array as h, lateral table(USERS_IN_GROUPS(h.hierarchy_data, 'Region-1')) as t(node_name, persons)
 ```
 
 ## Building the UDF
@@ -118,3 +117,19 @@ The JAR file will be created in the `target` directory.
     'io.confluent.udf.HierarchyTraversal'
     USING JAR 'confluent-artifact://cfa-qj...';
     ```
+
+* Iterate on UDF development: in some case we need to iterate on the deployment of new UDF version. It is possible to deploy UDF with different version.
+    * Need to drop the function:
+    ```sh
+    drop function USERS_IN_GROUPS
+    ```
+    * Delete the artifacts
+    * Upload the new jar as new artifact
+    * Then recreate it with the new artifact id
+
+## A full testing scenario
+
+* Define unique source table
+* insert first set of records
+* validate output
+* add new group with some users, verify parents are updated but not other group not in the parent hierarchy

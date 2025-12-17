@@ -1,0 +1,81 @@
+2025-12-16 13:44:00.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-16 13:44:00.431 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-16 13:44:00.432 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in subGroupsMap
+2025-12-16 13:44:00.432 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in subGroupsMap
+2025-12-16 13:44:00.432 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-16 13:44:00.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-16 13:44:00.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-16 13:44:00.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-16 13:44:00.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:44:00.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:44:00.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-16 13:44:00.433 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-16 13:44:00.433 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-16 13:44:00.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:44:00.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:44:00.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-16 13:44:00.433 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-16 13:44:00.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:44:00.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:44:00.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-16 13:44:00.434 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-16 13:49:09.230 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-16 13:49:09.231 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-16 13:49:09.231 [main] WARN  io.confluent.udf.HierarchyTraversal - Group name is null
+2025-12-16 13:49:09.231 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-16 13:49:09.231 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in subGroupsMap
+2025-12-16 13:49:09.231 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in subGroupsMap
+2025-12-16 13:49:09.232 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-16 13:49:09.232 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-16 13:49:09.232 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-16 13:49:09.232 [main] WARN  io.confluent.udf.HierarchyTraversal - Group name is null
+2025-12-16 13:49:09.232 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-16 13:49:09.232 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-16 13:49:09.233 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-16 13:49:09.233 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:49:09.233 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:49:09.233 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-16 13:49:09.233 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-16 13:49:09.233 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-16 13:49:09.234 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:49:09.234 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:49:09.235 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-16 13:49:09.235 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-16 13:49:09.235 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:49:09.235 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:49:09.235 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-16 13:49:09.235 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-16 13:50:25.304 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-16 13:50:25.305 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-16 13:50:25.305 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-16 13:50:25.305 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-16 13:50:25.306 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in subGroupsMap
+2025-12-16 13:50:25.306 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in subGroupsMap
+2025-12-16 13:50:25.306 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-16 13:50:25.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-16 13:50:25.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-16 13:50:25.306 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-16 13:50:25.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-16 13:50:25.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-16 13:50:25.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-16 13:50:25.307 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:50:25.307 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:50:25.307 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-16 13:50:25.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-16 13:50:25.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-16 13:50:25.307 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:50:25.307 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:50:25.307 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-16 13:50:25.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-16 13:50:25.307 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:50:25.308 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in subGroupsMap
+2025-12-16 13:50:25.308 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-16 13:50:25.308 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-16 13:52:08.996 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-16 13:52:08.997 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-16 13:52:08.997 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-16 13:52:08.997 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-16 13:52:08.997 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-16 13:52:08.997 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-16 13:52:08.997 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-16 13:52:08.997 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups

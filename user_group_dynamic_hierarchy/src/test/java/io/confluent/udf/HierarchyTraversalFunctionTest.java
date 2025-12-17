@@ -48,7 +48,7 @@ class HierarchyTraversalFunctionTest {
     }
 
     @Test
-    void testHierarchyTraversal() {
+    void testHierarchyTraversal() throws Exception {
         // Create rows with structure: (group_name, item_name, item_type)
         Row[] rows = new Row[]{
             Row.of("region_1", "NULL", "GROUP"),
@@ -69,13 +69,13 @@ class HierarchyTraversalFunctionTest {
             Row.of("department_11", "Julie", "PERSON")
 
         };
-        function.eval(rows, "region_1");    
+        function.eval(rows);    
         assertEquals(7, collectedRows.size(), "Should find 7 groups");
         collectedRows.forEach(System.out::println);
     }
 
     @Test
-    void testHierarchyTraversalWithNestedGroups() {
+    void testHierarchyTraversalWithNestedGroups() throws Exception {
         Row[] rows = new Row[]{
             Row.of("Dept_1", "SubGroup", "GROUP"),
             Row.of("SubGroup", "person1", "PERSON"),
@@ -83,7 +83,7 @@ class HierarchyTraversalFunctionTest {
         };
 
         // Test traversal through nested group
-        function.eval(rows, "Dept_1");
+        function.eval(rows);
 
         // Should find 2 persons in the nested group
         assertEquals(2, collectedRows.size(), "Should find 2 persons in nested group");
@@ -93,5 +93,23 @@ class HierarchyTraversalFunctionTest {
     void testToString() {
         assertEquals("USERS_IN_GROUPS", function.toString());
     }
-}
 
+    @Test
+    void testCompleteScenario() throws Exception {
+        System.out.println("testCompleteScenario: start");
+        Row[] rows = new Row[]{
+            Row.of("region_1", "NULL", "GROUP")
+        };
+
+        function.eval(rows);
+        collectedRows.forEach(System.out::println);
+        System.out.println("testCompleteScenario: add hospital_west to region_1");
+        rows = new Row[]{
+            Row.of("region_1", "NULL", "GROUP"),
+            Row.of("region_1", "hospital_west", "GROUP")
+        };
+        function.eval(rows);
+        collectedRows.forEach(System.out::println);
+        System.out.println("testCompleteScenario: end");
+    }
+}
