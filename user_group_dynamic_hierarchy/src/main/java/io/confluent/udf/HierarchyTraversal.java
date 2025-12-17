@@ -7,27 +7,33 @@ import org.apache.flink.types.Row;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Comparator;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Deque;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.ArrayDeque;
+
 
 /**
  * A Table Function that recursively traverses a hierarchy and returns all
- * persons
- * under a given node (department or group).
+ * persons under a given node (department or group).
  * 
  * Input: Takes the hierarchy as a nested ARRAY of ROWs and a starting node name
  * Output: Emits each person found under that node (at any depth)
+ * 
+ * The function maintains an internal cache to track the previous state of each
+ * group's user list. It only emits (collects) a row when the users for a group
+ * have changed compared to the previous invocation.
  */
 @FunctionHint(output = @DataTypeHint("ROW<group_name STRING, users ARRAY<STRING>>"))
-public class HierarchyTraversal extends TableFunction {
+public class HierarchyTraversal extends TableFunction<Row> {
     private static final Logger logger = LogManager.getLogger();
+    
+    // Cache to store the previous user set for each group (persists between eval() calls)
+    private final Map<String, Set<String>> cachedGroupUsers = new HashMap<>();
 
     /**
      * Traverse hierarchy starting from a given node
@@ -80,11 +86,35 @@ public class HierarchyTraversal extends TableFunction {
             }
         }
        
+        // Track which groups are present in current data
+        Set<String> currentGroups = new HashSet<>();
+        
         for (String groupName : allGroups) {
-            if ( ! membersMap.isEmpty()) {
-                List<String> users= findUsers(groupName, membersMap, subGroupsMap);
-                collect(Row.of(groupName, users));
+            currentGroups.add(groupName);
+            if (!membersMap.isEmpty()) {
+                List<String> users = findUsers(groupName, membersMap, subGroupsMap);
+                Set<String> currentUsers = new HashSet<>(users);
+                
+                // Check if users have changed compared to cache
+                Set<String> previousUsers = cachedGroupUsers.get(groupName);
+                if (previousUsers == null || !previousUsers.equals(currentUsers)) {
+                    logger.info("Group {} users changed. Previous: {}, Current: {}", 
+                        groupName, previousUsers, currentUsers);
+                    // Update cache and emit the change
+                    cachedGroupUsers.put(groupName, currentUsers);
+                    collect(Row.of(groupName, users));
+                } else {
+                    logger.debug("Group {} users unchanged, skipping collect", groupName);
+                }
             }
+        }
+        
+        // Remove groups that are no longer present in input from cache
+        Set<String> removedGroups = new HashSet<>(cachedGroupUsers.keySet());
+        removedGroups.removeAll(currentGroups);
+        for (String removedGroup : removedGroups) {
+            logger.info("Group {} removed from hierarchy, clearing cache", removedGroup);
+            cachedGroupUsers.remove(removedGroup);
         }
     }
 
