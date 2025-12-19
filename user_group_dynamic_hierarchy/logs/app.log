@@ -615,3 +615,1436 @@
 2025-12-17 14:51:28.744 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
 2025-12-17 14:51:28.744 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
 2025-12-17 14:51:28.744 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 08:26:47.711 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 08:26:47.714 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 08:26:47.714 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 08:26:47.715 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 08:26:47.716 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 08:26:47.718 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 08:26:47.718 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 08:26:47.718 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 08:26:47.719 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 08:26:47.719 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 08:26:47.719 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 08:26:47.719 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 08:26:47.719 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 08:26:47.719 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 08:26:47.719 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 08:26:47.720 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 08:26:47.720 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 08:26:47.720 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 08:26:47.720 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 08:26:47.721 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 08:26:47.721 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 08:26:47.721 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 08:26:47.721 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 08:26:47.721 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 08:26:47.721 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 08:26:47.721 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 08:26:47.721 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 08:26:47.721 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 08:26:47.722 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 08:26:47.722 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 08:26:47.722 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 08:26:47.722 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 08:26:47.722 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 08:26:47.722 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 08:26:47.722 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.722 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.723 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 08:26:47.723 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 08:26:47.723 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.723 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.723 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 08:26:47.724 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.724 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.724 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.724 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 08:26:47.724 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 08:26:47.724 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 08:26:47.724 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.724 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.724 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.724 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.725 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.725 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.725 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 08:26:47.725 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.725 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.725 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 08:26:47.725 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.726 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.726 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.726 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.726 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.726 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 08:26:47.727 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.727 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.727 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 08:26:47.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 08:26:47.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 08:26:47.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 08:26:47.727 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.727 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 08:26:47.728 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.728 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.728 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 08:26:47.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 08:26:47.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 08:26:47.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 08:26:47.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 08:26:47.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.728 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.728 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.728 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.728 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 08:26:47.729 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.729 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 08:26:47.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.729 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.729 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.729 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.729 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 08:26:47.730 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.730 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.730 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 08:26:47.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 08:26:47.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 08:26:47.730 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.730 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 08:26:47.731 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.731 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.731 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 08:26:47.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 08:26:47.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 08:26:47.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.732 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.732 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.732 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.732 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.732 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.732 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 08:26:47.733 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.733 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 08:26:47.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.733 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.733 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.734 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.734 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.734 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.734 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 08:26:47.734 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.735 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:26:47.735 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 08:26:47.735 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 08:26:47.735 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 08:26:47.735 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.736 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.736 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 08:26:47.736 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.736 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:26:47.736 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 08:26:47.736 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 08:26:47.736 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 08:26:47.737 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 08:26:47.737 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.737 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.737 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.737 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:26:47.737 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.737 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:26:47.737 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 08:26:47.740 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 08:26:47.740 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 08:26:47.740 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 08:26:47.740 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 08:26:47.740 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 08:26:47.741 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 08:26:47.741 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 08:26:47.741 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 08:26:47.741 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 08:26:47.741 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 08:26:47.741 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 08:26:47.741 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 08:26:47.741 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 08:26:47.741 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 08:26:47.741 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 08:26:47.741 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 08:26:47.741 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 08:26:47.741 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 08:26:47.741 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 08:26:47.741 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 08:26:47.744 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 08:26:47.744 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 08:26:47.744 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 08:26:47.745 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 08:26:47.745 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 08:26:47.745 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 08:26:47.745 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 08:26:47.745 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 08:59:12.657 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 08:59:12.658 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 08:59:12.658 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 08:59:12.658 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 08:59:12.658 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 08:59:12.658 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 08:59:12.658 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 08:59:12.659 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 08:59:12.660 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 08:59:12.661 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 08:59:12.661 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:59:12.661 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 08:59:12.661 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 08:59:12.661 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:59:12.661 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 08:59:12.661 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:59:12.661 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:59:12.661 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 08:59:12.661 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 08:59:12.662 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 08:59:12.662 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:59:12.662 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:59:12.662 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 08:59:12.662 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:59:12.662 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 08:59:12.662 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 08:59:12.662 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 08:59:12.662 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 08:59:12.662 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:59:12.662 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 08:59:12.662 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 08:59:12.662 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 08:59:12.662 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 08:59:12.663 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 08:59:12.663 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:59:12.663 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:59:12.663 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 08:59:12.663 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 08:59:12.663 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 08:59:12.663 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 08:59:12.663 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 08:59:12.663 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 08:59:12.663 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 08:59:12.663 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 08:59:12.663 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 08:59:12.663 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 08:59:12.663 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 08:59:12.663 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 08:59:12.664 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 08:59:12.666 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 08:59:12.666 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 08:59:12.666 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 08:59:12.666 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 08:59:12.666 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 08:59:12.666 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 08:59:12.666 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 08:59:12.666 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 08:59:12.666 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 08:59:12.667 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 08:59:12.667 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 08:59:12.667 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 08:59:12.667 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 08:59:12.667 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 08:59:12.667 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 08:59:12.669 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 08:59:12.669 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 08:59:12.669 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 08:59:12.669 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 08:59:12.669 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 08:59:12.669 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 08:59:12.669 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 08:59:12.669 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 09:20:19.625 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 09:20:19.626 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 09:20:19.627 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 09:20:19.627 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 09:20:19.628 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 09:20:19.629 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 09:20:19.629 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 09:20:19.629 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 09:20:19.629 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 09:20:19.629 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 09:20:19.629 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 09:20:19.629 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 09:20:19.629 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 09:20:19.629 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 09:20:19.629 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 09:20:19.629 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 09:20:19.629 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 09:20:19.630 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:20:19.630 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:20:19.630 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 09:20:19.630 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 09:20:19.630 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 09:20:19.630 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:20:19.630 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:20:19.630 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 09:20:19.630 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 09:20:19.630 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 09:20:19.630 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 09:20:19.630 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 09:20:19.631 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 09:20:19.631 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 09:20:19.631 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 09:20:19.631 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 09:20:19.631 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 09:20:19.631 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 09:20:19.631 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 09:20:19.631 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:20:19.631 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:20:19.631 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 09:20:19.631 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 09:20:19.631 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 09:20:19.631 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 09:20:19.631 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 09:20:19.631 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 09:20:19.632 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 09:20:19.632 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 09:20:19.632 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 09:20:19.632 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 09:20:19.632 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:20:19.632 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:20:19.632 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 09:20:19.633 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 09:20:19.633 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 09:20:19.634 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 09:20:19.634 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 09:20:19.634 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 09:20:19.634 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 09:20:19.634 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 09:20:19.634 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 09:20:19.634 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 09:20:19.634 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 09:20:19.634 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 09:20:19.634 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 09:20:19.634 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 09:20:19.634 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 09:20:19.634 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 09:20:19.635 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 09:20:19.635 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 09:20:19.635 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 09:20:19.635 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 09:20:19.635 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 09:20:19.636 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 09:20:19.636 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 09:20:19.636 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 09:36:56.416 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 09:36:56.418 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 09:36:56.418 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 09:36:56.418 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 09:36:56.418 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 09:36:56.418 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 09:36:56.418 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 09:36:56.418 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 09:36:56.418 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 09:36:56.418 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 09:36:56.418 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 09:36:56.418 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 09:36:56.419 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 09:36:56.420 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 09:36:56.420 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 09:36:56.420 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 09:36:56.421 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 09:36:56.421 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:36:56.421 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:36:56.421 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 09:36:56.421 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 09:36:56.421 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 09:36:56.421 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:36:56.421 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:36:56.421 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 09:36:56.421 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 09:36:56.421 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 09:36:56.421 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 09:36:56.422 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 09:36:56.422 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 09:36:56.422 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 09:36:56.422 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 09:36:56.422 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 09:36:56.422 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 09:36:56.422 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 09:36:56.422 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 09:36:56.422 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:36:56.422 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:36:56.422 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 09:36:56.422 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 09:36:56.422 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 09:36:56.422 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 09:36:56.422 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 09:36:56.423 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 09:36:56.423 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 09:36:56.423 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 09:36:56.423 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 09:36:56.423 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 09:36:56.423 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:36:56.423 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:36:56.423 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 09:36:56.424 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 09:36:56.424 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 09:36:56.424 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 09:36:56.425 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 09:36:56.425 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 09:36:56.425 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 09:36:56.425 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 09:36:56.425 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 09:36:56.425 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 09:36:56.425 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 09:36:56.425 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 09:36:56.425 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 09:36:56.425 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 09:36:56.425 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 09:36:56.425 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 09:36:56.427 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 09:36:56.427 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 09:36:56.427 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 09:36:56.427 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 09:36:56.427 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 09:36:56.427 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 09:36:56.427 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 09:36:56.427 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 09:53:39.500 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 09:53:39.501 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 09:53:39.501 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 09:53:39.501 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 09:53:39.501 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 09:53:39.502 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 09:53:39.503 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 09:53:39.504 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 09:53:39.504 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 09:53:39.504 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 09:53:39.504 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 09:53:39.504 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 09:53:39.504 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 09:53:39.504 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 09:53:39.504 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 09:53:39.504 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:53:39.504 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:53:39.504 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 09:53:39.505 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 09:53:39.505 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 09:53:39.505 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:53:39.505 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:53:39.505 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 09:53:39.505 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 09:53:39.505 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 09:53:39.505 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 09:53:39.505 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 09:53:39.505 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 09:53:39.505 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 09:53:39.505 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 09:53:39.505 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 09:53:39.506 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 09:53:39.506 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 09:53:39.506 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 09:53:39.506 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:53:39.506 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:53:39.506 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 09:53:39.506 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 09:53:39.506 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 09:53:39.506 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 09:53:39.506 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 09:53:39.506 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 09:53:39.506 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 09:53:39.506 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 09:53:39.506 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 09:53:39.506 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 09:53:39.507 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 09:53:39.507 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 09:53:39.507 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 09:53:39.508 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 09:53:39.508 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 09:53:39.508 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 09:53:39.508 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 09:53:39.508 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 09:53:39.508 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 09:53:39.508 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 09:53:39.508 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 09:53:39.508 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 09:53:39.508 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 09:53:39.508 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 09:53:39.509 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 09:53:39.509 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 09:53:39.509 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 09:53:39.509 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 09:53:39.510 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 09:53:39.510 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 09:53:39.510 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 09:53:39.510 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 09:53:39.510 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 09:53:39.510 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 09:53:39.510 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 09:53:39.510 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 10:15:01.116 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 10:15:01.117 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 10:15:01.118 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 10:15:01.118 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 10:15:01.118 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 10:15:01.118 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 10:15:01.118 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 10:15:01.118 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 10:15:01.118 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 10:15:01.118 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 10:15:01.118 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 10:15:01.118 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 10:15:01.119 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 10:15:01.120 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 10:15:01.120 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 10:15:01.120 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 10:15:01.120 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 10:15:01.120 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 10:15:01.120 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 10:15:01.120 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 10:15:01.120 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 10:15:01.120 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 10:15:01.120 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 10:15:01.121 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 10:15:01.121 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 10:15:01.121 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 10:15:01.121 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 10:15:01.121 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:15:01.121 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:15:01.121 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 10:15:01.121 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 10:15:01.121 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 10:15:01.121 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:15:01.121 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:15:01.121 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 10:15:01.122 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 10:15:01.122 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 10:15:01.122 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 10:15:01.122 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 10:15:01.122 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 10:15:01.122 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 10:15:01.122 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 10:15:01.122 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 10:15:01.122 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 10:15:01.122 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 10:15:01.122 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 10:15:01.122 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:15:01.122 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:15:01.122 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 10:15:01.123 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 10:15:01.123 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 10:15:01.123 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 10:15:01.123 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 10:15:01.123 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 10:15:01.123 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 10:15:01.123 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 10:15:01.123 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 10:15:01.123 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 10:15:01.123 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:15:01.123 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:15:01.123 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 10:15:01.125 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 10:15:01.125 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 10:15:01.125 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 10:15:01.125 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 10:15:01.125 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 10:15:01.125 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 10:15:01.125 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 10:15:01.125 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 10:15:01.125 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 10:15:01.125 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 10:15:01.125 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 10:15:01.126 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 10:15:01.126 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 10:15:01.126 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 10:15:01.126 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 10:15:01.127 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 10:15:01.127 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 10:15:01.127 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 10:15:01.128 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 10:15:01.128 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 10:15:01.128 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 10:15:01.128 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 10:15:01.128 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 10:28:46.304 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 10:28:46.305 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 10:28:46.305 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 10:28:46.306 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 10:28:46.307 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 10:28:46.308 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 10:28:46.308 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 10:28:46.308 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 10:28:46.308 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 10:28:46.308 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 10:28:46.308 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 10:28:46.308 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 10:28:46.308 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 10:28:46.308 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 10:28:46.308 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 10:28:46.308 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 10:28:46.309 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 10:28:46.309 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 10:28:46.309 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:28:46.309 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:28:46.309 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 10:28:46.309 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 10:28:46.309 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 10:28:46.309 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:28:46.309 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:28:46.309 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 10:28:46.309 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 10:28:46.310 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 10:28:46.310 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 10:28:46.310 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 10:28:46.310 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 10:28:46.310 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 10:28:46.310 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 10:28:46.310 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 10:28:46.310 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 10:28:46.310 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 10:28:46.310 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 10:28:46.310 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:28:46.310 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:28:46.310 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 10:28:46.310 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 10:28:46.311 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 10:28:46.311 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 10:28:46.311 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 10:28:46.311 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 10:28:46.311 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 10:28:46.311 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 10:28:46.311 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 10:28:46.311 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 10:28:46.311 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:28:46.311 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:28:46.311 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 10:28:46.313 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 10:28:46.313 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 10:28:46.313 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 10:28:46.313 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 10:28:46.314 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 10:28:46.314 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 10:28:46.314 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 10:28:46.315 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 10:28:46.315 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 10:28:46.315 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 10:28:46.315 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 10:28:46.315 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 10:46:37.266 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 10:46:37.267 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 10:46:37.267 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 10:46:37.267 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 10:46:37.268 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 10:46:37.269 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 10:46:37.270 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 10:46:37.270 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 10:46:37.270 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 10:46:37.270 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 10:46:37.270 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 10:46:37.270 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 10:46:37.270 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 10:46:37.270 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 10:46:37.270 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 10:46:37.270 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:46:37.270 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:46:37.271 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 10:46:37.271 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 10:46:37.271 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 10:46:37.271 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:46:37.271 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:46:37.271 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 10:46:37.271 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 10:46:37.271 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 10:46:37.271 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 10:46:37.271 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 10:46:37.271 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 10:46:37.271 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 10:46:37.271 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 10:46:37.272 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 10:46:37.272 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 10:46:37.272 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 10:46:37.272 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 10:46:37.272 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:46:37.272 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:46:37.272 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 10:46:37.272 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 10:46:37.272 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 10:46:37.272 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 10:46:37.272 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 10:46:37.272 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 10:46:37.272 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 10:46:37.272 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 10:46:37.273 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 10:46:37.273 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 10:46:37.273 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 10:46:37.273 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 10:46:37.273 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 10:46:37.274 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 10:46:37.274 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 10:46:37.274 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 10:46:37.275 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 10:46:37.275 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 10:46:37.275 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 10:46:37.275 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 10:46:37.275 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 10:46:37.275 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 10:46:37.275 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 10:46:37.275 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 10:46:37.275 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 10:46:37.275 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 10:46:37.275 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 10:46:37.275 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 10:46:37.276 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 10:46:37.276 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 10:46:37.276 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 10:46:37.276 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 10:46:37.277 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 10:46:37.277 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 10:46:37.277 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 10:46:37.277 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 11:55:12.725 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 11:55:12.726 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 11:55:12.726 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 11:55:12.726 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 11:55:12.726 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 11:55:12.727 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 11:55:12.728 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 11:55:12.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 11:55:12.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 11:55:12.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 11:55:12.729 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 11:55:12.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 11:55:12.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 11:55:12.729 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 11:55:12.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 11:55:12.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 11:55:12.729 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 11:55:12.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 11:55:12.729 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 11:55:12.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 11:55:12.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 11:55:12.730 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 11:55:12.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 11:55:12.730 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 11:55:12.730 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 11:55:12.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 11:55:12.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 11:55:12.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 11:55:12.730 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 11:55:12.730 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 11:55:12.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 11:55:12.730 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 11:55:12.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 11:55:12.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 11:55:12.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 11:55:12.731 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 11:55:12.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 11:55:12.731 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 11:55:12.731 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 11:55:12.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 11:55:12.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 11:55:12.731 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 11:55:12.731 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 11:55:12.731 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 11:55:12.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 11:55:12.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 11:55:12.731 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 11:55:12.732 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 11:55:12.732 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 11:55:12.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 11:55:12.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 11:55:12.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 11:55:12.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 11:55:12.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 11:55:12.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 11:55:12.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 11:55:12.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 11:55:12.733 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 11:55:12.733 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 11:55:12.733 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 11:55:12.734 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 11:55:12.734 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 11:55:12.734 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 11:55:12.734 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 11:55:12.735 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 11:55:12.735 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 11:55:12.735 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 11:55:12.735 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 11:55:12.736 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 11:55:12.736 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 11:55:12.736 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 11:55:12.736 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 16:06:44.446 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:06:44.447 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:06:44.447 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:06:44.447 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 16:06:44.448 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 16:06:44.449 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 16:06:44.450 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 16:06:44.450 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 16:06:44.450 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 16:06:44.450 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 16:06:44.450 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:06:44.450 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:06:44.450 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 16:06:44.450 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:06:44.450 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:06:44.450 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 16:06:44.451 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:06:44.451 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:06:44.451 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 16:06:44.451 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 16:06:44.451 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:06:44.451 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:06:44.451 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:06:44.452 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:06:44.452 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:06:44.452 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 16:06:44.452 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 16:06:44.452 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 16:06:44.452 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:06:44.452 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:06:44.452 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 16:06:44.452 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 16:06:44.452 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 16:06:44.452 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 16:06:44.452 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:06:44.452 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:06:44.452 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:06:44.453 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:06:44.453 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:06:44.453 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 16:06:44.453 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 16:06:44.453 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:06:44.453 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:06:44.453 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 16:06:44.453 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 16:06:44.453 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 16:06:44.453 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:06:44.453 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:06:44.453 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:06:44.453 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 16:06:44.455 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 16:06:44.455 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 16:06:44.455 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 16:06:44.455 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 16:06:44.455 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 16:06:44.455 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 16:06:44.456 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 16:06:44.456 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 16:06:44.456 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 16:06:44.456 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 16:06:44.456 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 16:06:44.456 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 16:06:44.456 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 16:06:44.456 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 16:06:44.456 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 16:06:44.457 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:06:44.457 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:06:44.457 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:06:44.457 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:06:44.457 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:06:44.458 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:06:44.458 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 16:06:44.458 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 16:08:42.461 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:08:42.462 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:08:42.462 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:08:42.462 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 16:08:42.462 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 16:08:42.462 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 16:08:42.462 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 16:08:42.462 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 16:08:42.463 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 16:08:42.464 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:08:42.464 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:08:42.465 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 16:08:42.465 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:08:42.465 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:08:42.465 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 16:08:42.465 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:08:42.465 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:08:42.465 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 16:08:42.465 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 16:08:42.465 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:08:42.465 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:08:42.465 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:08:42.465 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:08:42.466 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:08:42.466 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 16:08:42.466 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 16:08:42.466 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 16:08:42.466 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:08:42.466 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:08:42.466 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 16:08:42.466 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 16:08:42.466 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 16:08:42.466 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 16:08:42.466 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:08:42.466 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:08:42.466 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:08:42.466 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:08:42.467 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:08:42.467 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 16:08:42.467 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 16:08:42.467 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:08:42.467 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:08:42.467 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 16:08:42.467 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 16:08:42.467 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 16:08:42.467 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:08:42.467 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:08:42.467 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:08:42.467 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 16:08:42.469 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 16:08:42.469 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 16:08:42.469 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 16:08:42.469 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 16:08:42.470 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:08:42.470 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:08:42.470 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:08:42.471 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:08:42.471 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:08:42.471 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:08:42.471 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 16:08:42.471 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 16:14:01.426 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:14:01.428 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:14:01.428 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:14:01.428 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 16:14:01.428 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 16:14:01.428 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 16:14:01.428 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 16:14:01.428 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 16:14:01.428 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 16:14:01.429 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 16:14:01.430 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:14:01.430 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:14:01.431 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 16:14:01.431 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:14:01.431 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:14:01.431 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 16:14:01.431 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:14:01.431 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:14:01.431 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 16:14:01.431 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 16:14:01.431 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:14:01.431 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:14:01.431 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:14:01.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:14:01.432 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:14:01.432 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 16:14:01.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 16:14:01.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 16:14:01.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:14:01.432 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:14:01.432 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 16:14:01.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 16:14:01.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 16:14:01.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 16:14:01.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:14:01.432 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:14:01.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:14:01.433 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:14:01.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:14:01.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 16:14:01.433 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 16:14:01.433 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:14:01.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:14:01.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 16:14:01.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 16:14:01.433 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 16:14:01.433 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:14:01.433 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:14:01.433 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:14:01.433 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 16:14:01.435 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 16:14:01.435 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 16:14:01.435 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 16:14:01.435 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 16:14:01.435 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 16:14:01.435 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 16:14:01.436 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 16:14:01.436 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 16:14:01.436 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 16:14:01.436 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 16:14:01.436 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 16:14:01.436 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 16:14:01.436 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 16:14:01.436 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 16:14:01.436 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 16:14:01.437 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:14:01.437 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:14:01.437 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:14:01.438 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:14:01.438 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:14:01.438 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:14:01.438 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 16:14:01.438 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 16:28:50.197 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:28:50.198 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:28:50.198 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 16:28:50.199 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 16:28:50.200 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 16:28:50.201 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 16:28:50.201 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 16:28:50.201 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 16:28:50.201 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 16:28:50.201 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 16:28:50.201 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:28:50.201 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:28:50.201 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 16:28:50.201 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:28:50.201 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:28:50.201 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 16:28:50.201 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:28:50.202 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:28:50.202 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 16:28:50.202 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 16:28:50.202 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:28:50.202 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:28:50.202 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:28:50.202 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:28:50.202 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:28:50.202 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 16:28:50.202 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 16:28:50.202 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 16:28:50.202 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:28:50.202 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:28:50.203 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 16:28:50.203 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 16:28:50.203 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 16:28:50.203 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 16:28:50.203 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:28:50.203 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:28:50.203 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:28:50.203 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:28:50.203 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:28:50.203 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 16:28:50.203 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 16:28:50.203 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:28:50.203 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:28:50.203 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 16:28:50.203 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 16:28:50.204 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 16:28:50.204 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:28:50.204 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:28:50.204 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:28:50.204 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 16:28:50.205 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 16:28:50.205 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 16:28:50.205 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 16:28:50.205 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 16:28:50.205 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 16:28:50.205 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 16:28:50.205 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 16:28:50.206 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 16:28:50.206 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 16:28:50.206 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 16:28:50.206 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 16:28:50.206 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 16:28:50.206 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 16:28:50.206 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 16:28:50.206 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 16:28:50.207 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:28:50.207 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:28:50.207 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:28:50.207 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:28:50.207 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:28:50.208 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:28:50.208 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 16:28:50.208 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 16:44:20.486 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:44:20.487 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:44:20.487 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:44:20.487 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 16:44:20.487 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
+2025-12-18 16:44:20.487 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_east, GROUP
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_east to allGroups
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, department_1, GROUP
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_1 to allGroups
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_east, department_11, GROUP
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: department_11 to allGroups
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: hospital_west, nurses_gp_1, GROUP
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_1 to allGroups
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, nurses_gp_2, GROUP
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: nurses_gp_2 to allGroups
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_1, Julie, PERSON
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 16:44:20.488 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Himani, PERSON
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Himani to membersMap
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_1, Laura, PERSON
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Laura to membersMap
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Bratt, PERSON
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Bratt to membersMap
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Caroll, PERSON
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Caroll to membersMap
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Lucy, PERSON
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Lucy to membersMap
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: nurses_gp_2, Mary, PERSON
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Mary to membersMap
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Paul, PERSON
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Paul to membersMap
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: department_11, Julie, PERSON
+2025-12-18 16:44:20.489 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: Julie to membersMap
+2025-12-18 16:44:20.490 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:44:20.490 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:44:20.490 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_11 users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 16:44:20.490 [main] INFO  io.confluent.udf.HierarchyTraversal - Collected users: Julie
+2025-12-18 16:44:20.490 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:44:20.490 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:44:20.490 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_1 users changed. Previous: null, Current: [Laura, Himani]
+2025-12-18 16:44:20.490 [main] INFO  io.confluent.udf.HierarchyTraversal - Collected users: Laura
+2025-12-18 16:44:20.490 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:44:20.490 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:44:20.491 [main] INFO  io.confluent.udf.HierarchyTraversal - Group nurses_gp_2 users changed. Previous: null, Current: [Bratt, Caroll, Lucy, Mary]
+2025-12-18 16:44:20.491 [main] INFO  io.confluent.udf.HierarchyTraversal - Collected users: Bratt
+2025-12-18 16:44:20.491 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 16:44:20.491 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:44:20.491 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:44:20.491 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:44:20.491 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:44:20.491 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:44:20.491 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 16:44:20.491 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_west users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Mary]
+2025-12-18 16:44:20.491 [main] INFO  io.confluent.udf.HierarchyTraversal - Collected users: Laura
+2025-12-18 16:44:20.491 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 16:44:20.491 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:44:20.491 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:44:20.492 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 16:44:20.492 [main] INFO  io.confluent.udf.HierarchyTraversal - Group hospital_east users changed. Previous: null, Current: [Julie, Paul]
+2025-12-18 16:44:20.492 [main] INFO  io.confluent.udf.HierarchyTraversal - Collected users: Julie
+2025-12-18 16:44:20.492 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: region_1
+2025-12-18 16:44:20.492 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_west
+2025-12-18 16:44:20.492 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:44:20.492 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:44:20.492 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:44:20.492 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_1
+2025-12-18 16:44:20.492 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_1 not found in subGroupsMap
+2025-12-18 16:44:20.492 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_west not found in membersMap
+2025-12-18 16:44:20.492 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: hospital_east
+2025-12-18 16:44:20.492 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_11
+2025-12-18 16:44:20.492 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: department_11 not found in subGroupsMap
+2025-12-18 16:44:20.492 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: hospital_east not found in membersMap
+2025-12-18 16:44:20.493 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: region_1 not found in membersMap
+2025-12-18 16:44:20.493 [main] INFO  io.confluent.udf.HierarchyTraversal - Group region_1 users changed. Previous: null, Current: [Laura, Julie, Bratt, Himani, Caroll, Lucy, Paul, Mary]
+2025-12-18 16:44:20.493 [main] INFO  io.confluent.udf.HierarchyTraversal - Collected users: Laura
+2025-12-18 16:44:20.493 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: department_1
+2025-12-18 16:44:20.493 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: nurses_gp_2
+2025-12-18 16:44:20.493 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: nurses_gp_2 not found in subGroupsMap
+2025-12-18 16:44:20.493 [main] INFO  io.confluent.udf.HierarchyTraversal - Group department_1 users changed. Previous: null, Current: [Julie, Bratt, Caroll, Lucy, Mary]
+2025-12-18 16:44:20.493 [main] INFO  io.confluent.udf.HierarchyTraversal - Collected users: Julie
+2025-12-18 16:44:20.495 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[Dept_1, SubGroup, GROUP]
+2025-12-18 16:44:20.495 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: Dept_1, SubGroup, GROUP
+2025-12-18 16:44:20.495 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: SubGroup to allGroups
+2025-12-18 16:44:20.495 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person1, PERSON
+2025-12-18 16:44:20.496 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person1 to membersMap
+2025-12-18 16:44:20.496 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: SubGroup, person2, PERSON
+2025-12-18 16:44:20.496 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding person: person2 to membersMap
+2025-12-18 16:44:20.496 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: Dept_1
+2025-12-18 16:44:20.496 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 16:44:20.496 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 16:44:20.496 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: Dept_1 not found in membersMap
+2025-12-18 16:44:20.497 [main] INFO  io.confluent.udf.HierarchyTraversal - Group Dept_1 users changed. Previous: null, Current: [person2, person1]
+2025-12-18 16:44:20.497 [main] INFO  io.confluent.udf.HierarchyTraversal - Collected users: person2
+2025-12-18 16:44:20.497 [main] INFO  io.confluent.udf.HierarchyTraversal - Finding users for group: SubGroup
+2025-12-18 16:44:20.497 [main] WARN  io.confluent.udf.HierarchyTraversal - Group: SubGroup not found in subGroupsMap
+2025-12-18 16:44:20.497 [main] INFO  io.confluent.udf.HierarchyTraversal - Group SubGroup users changed. Previous: null, Current: [person2, person1]
+2025-12-18 16:44:20.497 [main] INFO  io.confluent.udf.HierarchyTraversal - Collected users: person2
+2025-12-18 16:44:20.500 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:44:20.500 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:44:20.500 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:44:20.500 [main] INFO  io.confluent.udf.HierarchyTraversal - Starting hierarchy traversal from node: +I[region_1, NULL, GROUP]
+2025-12-18 16:44:20.500 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, NULL, GROUP
+2025-12-18 16:44:20.500 [main] WARN  io.confluent.udf.HierarchyTraversal - item_name is null or equals to NULL
+2025-12-18 16:44:20.500 [main] INFO  io.confluent.udf.HierarchyTraversal - Processing row: region_1, hospital_west, GROUP
+2025-12-18 16:44:20.500 [main] INFO  io.confluent.udf.HierarchyTraversal - Adding group: hospital_west to allGroups
