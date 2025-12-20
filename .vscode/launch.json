@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug Current Test",
+            "request": "launch",
+            "mainClass": "",
+            "projectName": "",
+            "vmArgs": "",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "java",
+            "name": "Debug JUnit Tests - user_group_dynamic_hierarchy",
+            "request": "launch",
+            "mainClass": "org.junit.platform.console.ConsoleLauncher",
+            "projectName": "dynamic-group-hierarchy-udf",
+            "args": [
+                "--select-class=io.confluent.udf.HierarchyTraversalFunctionTest"
+            ],
+            "cwd": "${workspaceFolder}/user_group_dynamic_hierarchy"
+        }
+    ]
+}

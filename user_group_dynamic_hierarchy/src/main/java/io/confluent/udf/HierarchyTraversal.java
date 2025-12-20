@@ -32,8 +32,7 @@ import java.util.HashSet;
 public class HierarchyTraversal extends TableFunction<Row> {
     private static final Logger logger = LogManager.getLogger();
     
-    // Cache to store the previous user set for each group (persists between eval() calls)
-
+    // Cache to store the previous user set for each group should be stored in a persistent store (not this implementation)
     private transient Map<String, Set<String>> cachedGroupUsers = new HashMap<>();
 
     /**
@@ -64,11 +63,8 @@ public class HierarchyTraversal extends TableFunction<Row> {
                 String itemName = (String) row.getField(1);
                 String itemType = (String) row.getField(2);
                 logger.info("Processing row: {}, {}, {}", group_name, itemName, itemType);
-                if (group_name != null) {
+                if (group_name != null && ! allGroups.contains(group_name)) {
                     allGroups.add(group_name);
-                } else {
-                    logger.warn("group_name is null");
-                    continue;
                 }
                 if (group_name != null && (itemName != null && ! itemName.equals("NULL"))) {
                     if (itemType.equals("GROUP")) {
@@ -85,7 +81,7 @@ public class HierarchyTraversal extends TableFunction<Row> {
                         logger.error("Unknown item type: {}", itemType);
                     }
                 } else {
-                    logger.warn("item_name is null or equals to NULL");
+                    logger.info("item_name is null or equals to NULL");
                 }
             }
         
@@ -100,14 +96,14 @@ public class HierarchyTraversal extends TableFunction<Row> {
                     Set<String> currentUsers = new HashSet<>(usersList);
                     
                     // Check if users have changed compared to cache
-                    Set<String> previousUsers = cachedGroupUsers.get(groupName);
-                    if (previousUsers == null || !previousUsers.equals(currentUsers)) {
+                    Set<String> previousUsers = cachedGroupUsers.computeIfAbsent(groupName, k -> new HashSet<>());
+                    if ( !previousUsers.equals(currentUsers)) {
                         logger.info("Group {} users changed. Previous: {}, Current: {}", 
                             groupName, previousUsers, currentUsers);
                         // Update cache and emit the change
                         cachedGroupUsers.put(groupName, currentUsers);
+                        // change type to primitive for Row.of to work
                         String[] users = usersList.toArray(new String[0]);
-                        logger.info("Collected users: {}", users);
                         Row outRow = new Row(2);
                         outRow.setField(0,groupName);
                         outRow.setField(1, users);
@@ -118,13 +114,6 @@ public class HierarchyTraversal extends TableFunction<Row> {
                 }
             }
             
-            // Remove groups that are no longer present in input from cache
-            Set<String> removedGroups = new HashSet<>(cachedGroupUsers.keySet());
-            removedGroups.removeAll(currentGroups);
-            for (String removedGroup : removedGroups) {
-                logger.info("Group {} removed from hierarchy, clearing cache", removedGroup);
-                cachedGroupUsers.remove(removedGroup);
-            }
         } catch (Exception e) {
             logger.error("Error during hierarchy traversal", e);
             throw e;
