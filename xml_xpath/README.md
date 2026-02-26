@@ -34,6 +34,20 @@ For documents with default or explicit XML namespaces, use namespace-agnostic XP
 - Apache Flink 1.18.1 or later
 - Maven 3.x
 
+### Implement the scalar UDF in XmlXpathFunction.java
+
+* Extend ScalarFunction and expose a single evaluation method: 
+    ```java
+    public String eval(String xml, String xpathExpression)
+    ```
+* Parsing and XPath (JDK only):
+    * Parse xml with DocumentBuilderFactory / DocumentBuilder and InputSource(new StringReader(xml)).
+    * Evaluate xpathExpression with XPathFactory.newInstance().newXPath() and xpath.evaluate(expr, doc, XPathConstants.STRING) (or NODESET and take the first node’s text/attribute value) so that both element text and attribute selections (e.g. /@CancelFlag) work.
+
+* Null/empty handling: If xml or xpathExpression is null or blank, return null. If parsing or evaluation throws, log and return null so the pipeline does not fail.
+* Namespace-agnostic XPath: The README uses expressions like /*[name()="POSLog"]/*[name()="Transaction"]/@CancelFlag. JAXP supports this; no need to set a namespace context for that pattern. Optionally document that for default-namespace documents, local-name()/name() in XPath is recommended.
+* Naming: Override toString() to return a stable name (e.g. "XPATH_STRING") for registration; the catalog can still register the function as xpath_string in SQL.
+
 ## Building
 
 The project uses Maven for dependency management and building. To build the project:
@@ -58,7 +72,7 @@ mvn test
     ![](./images/upload-artifact.png)
    
    Be sure to get the artifact unique identifier.
-   
+
 * As an alternative, using the Confluent CLI to upload the jar file. Example
     ```sh
     confluent environment list
