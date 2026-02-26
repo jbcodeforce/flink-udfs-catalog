@@ -1,135 +1,117 @@
-# Traverse User Group Hierarchy UDF for Flink
+# Traverse User Group Hierarchy UDF for Apache Flink
 
-The problem to address, how to support a hierarchy within the same table, and try to get the users in a group by flattening the hierarchy. As an example there is a group of hospitals, with departments, and groups of people, then persons.
+This Apache Flink User Defined Function flattens a hierarchy of groups and users stored in a single table. Given an array of hierarchy rows (group_name, item_name, item_type) and a root group name, it emits one row per group with the list of persons in that group (including persons in child groups). The hierarchy depth is dynamic and unknown.
 
 ![](./images/group_hierarchy.drawio.png)
 
-* Person can be part of multiple groups
-* Group can be part of other group.
-* There is one root group
-* The hierarchy is dynamic and the number of level may change over time. The hierarchy depth is unknown.
+* A person can be part of multiple groups; a group can be part of another group; there is one root group.
+* Use case: e.g. region > hospitals > departments > groups > persons. The function accumulates persons into each group by flattening the hierarchy.
 
+## Implementation summary
 
-* The unique table keeps group  and user assignment information. Here is the simplest definition:
-    ```sql
-    CREATE TABLE group_hierarchy (
-    id              INT PRIMARY KEY NOT ENFORCED,
-    group_name STRING,
-    item_name       STRING,
-    item_type       STRING NOT NULL,   -- 'GROUP' or 'PERSON'
-    ```
+The `HierarchyTraversal` is a Table Function (Java class `io.confluent.udf.HierarchyTraversal`). It takes an array of ROW(group_name, item_name, item_type) and a root group name (e.g. `'Region-1'`), and emits rows (node_name, persons) where persons is the list of user names in that group (including descendants). The hierarchy is built from the array and flattened so that parents contain all persons from child groups.
 
-With the following insert statements:
-```sql
-insert into group_hierarchy (id, group_name, item_name, item_type, created_at) values 
-(1, 'region_1', CAST(NULL AS STRING), 'GROUP', TO_TIMESTAMP('2021-01-01 00:00:00')),
-(2, 'region_1',  'hospital_west', 'GROUP', TO_TIMESTAMP('2021-01-01 00:00:10')),
-(3, 'region_1',  'hospital_east', 'GROUP', TO_TIMESTAMP('2021-01-01 00:00:10')),
-(4, 'hospital_west',  'department_1', 'GROUP', TO_TIMESTAMP('2021-01-01 00:00:20')),
-(5, 'hospital_east',  'department_11', 'GROUP', TO_TIMESTAMP('2021-01-01 00:00:20')),
-(6, 'hospital_west',  'nurses_gp_1', 'GROUP', TO_TIMESTAMP('2021-01-01 00:00:20')),
-(7, 'department_1',  'nurses_gp_2', 'GROUP', TO_TIMESTAMP('2021-01-01 00:00:20')),
-(8, 'department_1',  'Julie', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:30')),
-(9, 'nurses_gp_1',  'Himani', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:40')),
-(10, 'nurses_gp_1',  'Laura', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:40')),
-(11,'nurses_gp_2', 'Bratt', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:40')),
-(12, 'nurses_gp_2', 'Caroll', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:40')),
-(13, 'nurses_gp_2', 'Lucy', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:40')),
-(14, 'nurses_gp_2', 'Mary', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:40')),
-(15, 'department_11', 'Paul', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:50')),
-(16, 'department_11', 'Julie', 'PERSON', TO_TIMESTAMP('2021-01-01 00:00:50'));
-```
+## Building
 
-* If we extract the following array from the group_hierarchy:
-
-region_1,,GROUP,
-region_1,hospital_west,GROUP,
-region_1,hospital_east,GROUP,
-hospital_west,department_1,GROUP,
-hospital_east,department_11,GROUP,
-hospital_west,nurses_gp_1,GROUP,
-department_1,nurses_gp_2,GROUP,
-department_1,Julie,PERSON,
-nurses_gp_1,Himani,PERSON,
-nurses_gp_1,Laura,PERSON,
-nurses_gp_2,Bratt,PERSON,
-nurses_gp_2,Caroll,PERSON,
-nurses_gp_2,Lucy,PERSON,
-nurses_gp_2,Mary,PERSON,
-department_11,Paul,PERSON,
-department_11,Julie,PERSON
-
-The function needs to accumulate person to groups, and flatten the hierarchy. So if a person is in child group, he/she will be in parent of this group.
-
-* The expected results from the previous inserts will look like:
-
-| Group | Persons |
-| --- | --- |
-| nurses_gp_1 | [Himani, Laura] |
-| nurses_gp_2 | [Bratt, Carol, Lucy, Mary] |
-| Dept_1 | [Bratt, Carol, Julie, Lucy, Mary] |
-| Dept_11 | [Paul, Julie] |
-| Hospital West | [Bratt, Carol,  Himani, Julie, Laura, Lucy, Mary] |
-| Hopital East | [Paul, Julie] |
-| Region 1 | [Bratt, Carol,  Himani, Julie, Laura, Lucy, Mary, Paul] |
-
-
-## Expected usage
-
-```sh
--- First, collect all hierarchy data into an array, then call the UDF
-WITH hierarchy_array AS (
-    SELECT ARRAY_AGG(ROW(group_name, item_name, item_type)) AS hierarchy_data
-    FROM group_hierarchy
-)
-SELECT 
-    t.node_name,
-    t.persons
-FROM hierarchy_array as h, lateral table(USERS_IN_GROUPS(h.hierarchy_data, 'Region-1')) as t(node_name, persons)
-```
-
-## Building the UDF
-
-To build the UDF JAR file:
+The project uses Maven for dependency management and building. To build the project:
 
 ```bash
 mvn clean package
 ```
 
-The JAR file will be created in the `target` directory.
+This will create a JAR file in the `target` directory (`target/dynamic-group-hierarchy-udf-1.0-0.jar`) that you can use with your Flink application or deploy as a function to Confluent Cloud.
 
+## Testing
 
-## Deploying to Confluent Cloud
+The project includes unit tests that verify:
+- Hierarchy flattening and accumulation of persons per group
+- Correct output rows (node_name, persons) for a given hierarchy array and root
+- Edge cases and multiple groups
 
-[See product documentation.](https://docs.confluent.io/cloud/current/flink/concepts/user-defined-functions.html)
+To run the tests:
 
-* Use the Confluent CLI to upload the jar file. Example
+```bash
+mvn test
+```
+
+## Deployment
+
+### Confluent Cloud for Flink
+
+[See Confluent cloud product documentation.](https://docs.confluent.io/cloud/current/flink/concepts/user-defined-functions.html)
+
+* Be sure to have a user or service account with FlinkDeveloper RBAC to manage workspaces and artifacts.
+* Use the Confluent CLI to upload the JAR file. Example:
+
     ```sh
+    confluent login
     confluent environment list
     # then in your environment
-    confluent flink artifact create sequence --artifact-file target/dynamic-group-hierarchy-udf-1.0-0.jar --cloud aws --region us-west-2 --environment env-nk...
+    confluent flink artifact create user_group_hierarchy --artifact-file target/dynamic-group-hierarchy-udf-1.0-0.jar --cloud aws --region us-west-2 --environment env-nk...
     ```
 
-* For SQL queries, the UDF must be registered by using the CREATE FUNCTION statement.
-    ```sql
-    CREATE FUNCTION USERS_IN_GROUPS
-    AS
-    'io.confluent.udf.HierarchyTraversal'
-    USING JAR 'confluent-artifact://cfa-qj...';
-    ```
+    Example artifact table after creation:
 
-* Iterate on UDF development: in some case we need to iterate on the deployment of new UDF version. It is possible to deploy UDF with different version.
-    * Need to drop the function:
     ```sh
-    drop function USERS_IN_GROUPS
+    +--------------------+------------------------+
+    | ID                 | cfa-...                 |
+    | Name               | user_group_hierarchy    |
+    | Version            | ver-...                 |
+    | Cloud              | aws                     |
+    | Region             | us-west-2               |
+    | Environment        | env-...                 |
+    | Content Format     | JAR                     |
+    +--------------------+------------------------+
     ```
-    * Delete the artifacts
-    * Upload the new jar as new artifact
-    * Then recreate it with the new artifact id
 
-## A full testing scenario
+* Register the function in the Flink catalog:
 
-* Define unique source table
-* insert first set of records
-* validate output
-* add new group with some users, verify parents are updated but not other group not in the parent hierarchy
+    ```sql
+    CREATE FUNCTION USERS_IN_GROUPS AS 'io.confluent.udf.HierarchyTraversal' USING JAR 'confluent-artifact://cfa-...';
+    ```
+
+* To deploy a new UDF version: drop the function (`DROP FUNCTION USERS_IN_GROUPS`), delete or replace the artifact, upload the new JAR, then recreate the function with the new artifact ID.
+
+### Apache Flink OSS
+
+Add the UDF JAR to the cluster classpath: place `target/dynamic-group-hierarchy-udf-1.0-0.jar` in the `lib/` directory of each JobManager and TaskManager, or include it in your job JAR when submitting. Then register the function in a Flink catalog:
+
+```sql
+CREATE FUNCTION USERS_IN_GROUPS AS 'io.confluent.udf.HierarchyTraversal' USING JAR 'file:///path/to/dynamic-group-hierarchy-udf-1.0-0.jar';
+```
+
+Or with the Table API: `tEnv.createTemporarySystemFunction("USERS_IN_GROUPS", HierarchyTraversal.class);`
+
+## Usage
+
+Store group and user assignment in a table (e.g. group_name, item_name, item_type with values `'GROUP'` or `'PERSON'`). Collect the hierarchy into an array and call the UDF with LATERAL TABLE:
+
+```sql
+CREATE TABLE group_hierarchy (
+    id INT PRIMARY KEY NOT ENFORCED,
+    group_name STRING,
+    item_name STRING,
+    item_type STRING NOT NULL  -- 'GROUP' or 'PERSON'
+    -- created_at TIMESTAMP, etc.
+);
+```
+
+```sql
+WITH hierarchy_array AS (
+    SELECT ARRAY_AGG(ROW(group_name, item_name, item_type)) AS hierarchy_data
+    FROM group_hierarchy
+)
+SELECT t.node_name, t.persons
+FROM hierarchy_array AS h,
+     LATERAL TABLE(USERS_IN_GROUPS(h.hierarchy_data, 'Region-1')) AS t(node_name, persons);
+```
+
+Example expected result: one row per group with node_name and the list of persons in that group (including persons in child groups). Example: nurses_gp_1 -> [Himani, Laura]; region_1 -> [Bratt, Carol, Himani, Julie, Laura, Lucy, Mary, Paul].
+
+Full testing scenario: define the source table, insert records, validate output; add a new group with users and verify parent groups are updated accordingly.
+
+## Requirements
+
+- Java 17 or later
+- Apache Flink 1.18.1 or later
+- Maven 3.x

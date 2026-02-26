@@ -12,6 +12,29 @@ The `GeoDistanceFunction` is a scalar function that takes four parameters:
 
 It returns the distance between the two points on earth in kilometers.
 
+## Building
+
+The project uses Maven for dependency management and building. To build the project:
+
+```bash
+mvn clean package
+```
+
+This will create a JAR file in the `target` directory (`target/geo-distance-udf-1.0-0.jar`) that you can use with your Flink application.
+
+## Testing
+
+The project includes unit tests that verify the accuracy of the distance calculations. The tests include:
+- Known distance between cities (Paris to London)
+- Distance to same point (should be 0)
+- Distance between antipodal points (opposite sides of Earth)
+
+To run the tests:
+
+```bash
+mvn test
+```
+
 ## Deployment
 
 ### Confluent Cloud for Flink
@@ -55,9 +78,15 @@ It returns the distance between the two points on earth in kilometers.
     ![](./images/udf_in_sql.png)
 
 
-### Confluent Platform Manager for Flink
+### Apache Flink OSS
 
-### Apache Flink
+Add the UDF JAR to the cluster classpath: place `target/geo-distance-udf-1.0-0.jar` in the `lib/` directory of each JobManager and TaskManager, or include it in your job JAR when submitting. Then register the function in a Flink catalog:
+
+```sql
+CREATE FUNCTION GEO_DISTANCE AS 'io.confluent.udf.GeoDistanceFunction' USING JAR 'file:///path/to/geo-distance-udf-1.0-0.jar';
+```
+
+Or with the Table API: `tEnv.createTemporarySystemFunction("GEO_DISTANCE", GeoDistanceFunction.class);`
 
 ## Usage
 
@@ -88,29 +117,6 @@ Table result = tEnv.from("MyTable")
 -- Use in SQL query
 SELECT GEO_DISTANCE(lat1, lon1, lat2, lon2) AS distance_km;
 FROM MyTable;
-```
-
-## Building
-
-The project uses Maven for dependency management and building. To build the project:
-
-```bash
-mvn clean package
-```
-
-This will create a JAR file in the `target` directory that you can use with your Flink application.
-
-## Testing
-
-The project includes unit tests that verify the accuracy of the distance calculations. The tests include:
-- Known distance between cities (Paris to London)
-- Distance to same point (should be 0)
-- Distance between antipodal points (opposite sides of Earth)
-
-To run the tests:
-
-```bash
-mvn test
 ```
 
 ## Implementation Details
