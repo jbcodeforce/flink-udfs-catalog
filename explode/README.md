@@ -10,7 +10,7 @@ The EXPLODE function generates a row per string in the list or array of strings 
 
 
 ```sql
--- Generate a sequence from 1 to 50
+-- Generate a 3 rows
 SELECT 
  t.sub_string 
 from lateral table(EXPLODE(ARRAY['ab','bc','cd'])) AS t(sub_string);

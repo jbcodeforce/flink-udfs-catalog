@@ -16,11 +16,12 @@ It returns the distance between the two points on earth in kilometers.
 
 ### Confluent Cloud for Flink
 
-[See product documentation.](https://docs.confluent.io/cloud/current/flink/concepts/user-defined-functions.html)
+[See Confluent cloud product documentation.](https://docs.confluent.io/cloud/current/flink/concepts/user-defined-functions.html)
 
-* Get FlinkDeveloper RBAC to be able to manage workspaces and artifacts
+* Be sure to have a user or service account with FlinkDeveloper RBAC to be able to manage workspaces and artifacts
 * Use the Confluent CLI to upload the jar file. Example
     ```sh
+    confluent login
     confluent environment list
     # then in your environment
     confluent flink artifact create geo_distance --artifact-file target/geo-distance-udf-1.0-0.jar --cloud aws --region us-west-2 --environment env-nk...

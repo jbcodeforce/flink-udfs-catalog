@@ -10,7 +10,7 @@ This repository will group of User Defined Functions for Flink. Some functions a
 | SEQUENCE | generates a sequence of numbers, used in Flink SQL to generate rows with sequential numbers | [sequence](./sequence/) |
 | SORT_ROW_ARRAY_ON_ID | returns a sorted array of ROWs based on the column referenced by the given id | [sorting_row_array](./sorting_row_array/) |
 | USERS_IN_GROUPS | Generates group -> list of users row from a hierarchhy of groups, which may have dynamic number of level | [user_group_dynamic_hierarchy](./user_group_dynamic_hierarchy/) |
-
+| xpath_string | Extract element from XML string using XPath expression | [xml_xpath](./xml_xpath/)|
 
 ## Documentation References
 
